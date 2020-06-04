@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RSA</title>
+  <link rel="stylesheet" href="css/textArea.css"/>
+  <script src="js/main.js"></script>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+  function checkAndDownload() {
+    if (document.getElementById("content1").value != '')
+      window.open("/download")
+  }
+</script>
+  <script>
+    $(document).ready(function() {
+      $("#upload-file-input").on("change", uploadFile);
+    });
+    function uploadFile() {
+      $.ajax({
+        url: "/uploadFile",
+        type: "POST",
+        data: new FormData($("#upload-file-form")[0]),
+        enctype: 'multipart/form-data',
+        processData: false,
+        contentType: false,
+        cache: false,
+        success: function (data) {
+          // Handle upload success
+          $("#upload-file-message").text("成功上传文件");
+          console.log(data)
+          document.getElementById("content").value = data;
+        },
+        error: function () {
+          // Handle upload error
+          $("#upload-file-message").text(
+                  "上传失败");
+        }
+      });
+    }
+  </script>
+</head>
+<body background="/img/leaves-pattern.png">
+
+  <h1>RSA加密/解密</h1>
+  <div style="text-align: center">
+    <form id="upload-file-form">
+      <label for="upload-file-input">上传文件:</label>
+      <input id="upload-file-input" type="file" name="uploadfile" accept="*" />
+      <br />
+      <span id="upload-file-message"></span>
+    </form>
+  </div>
+  <textarea id="content" placeholder="输入" data-hook="main" autofocus></textarea>
+
+<div style="text-align: center">
+  <textarea id="n" rows="2" cols="110" placeholder="输入n" style="visibility: hidden" ></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <textarea id="d" rows="2" cols="110" placeholder="输入d" style="visibility: hidden" ></textarea>
+  <br>
+      <button type="button"  onclick="encrypt()">加密</button>
+      <button type="button" onclick="decrypt()">解密</button>
+</div>
+  <textarea id="content1" placeholder="输出" data-hook="main" autofocus></textarea>
+  <div class="buttons-container">
+    <div class="buttons-container-right">
+<!--      <a href="/download"><button type="button" >下载</button></a>-->
+      <button type="button" onclick="checkAndDownload()">下载</button>
+      <button type="button" id="copy" >复制到剪贴板</button>
+    </div>
+  </div>
+</body>
+</html>

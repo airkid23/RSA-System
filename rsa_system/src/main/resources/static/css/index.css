@@ -1,0 +1,121 @@
+html {
+    height: 100%;
+}
+body {
+    background-image: linear-gradient(-60deg, #686DE0, #28D988);
+    background-repeat: no-repeat;
+}
+.github-btns {
+    text-align: right;
+}
+
+.title {
+    text-shadow: 0 0rem 1.5rem lime;
+    text-align: center;
+}
+
+.main {
+    max-width: 50rem;
+    margin: auto;
+}
+
+.input-box {
+    width: 70%;
+    margin: 1rem auto 2rem;
+    padding: 2rem 3rem;
+    text-align: center;
+    border-bottom: .2rem solid silver;
+}
+.input {
+    font-size: 1.3rem;
+    width: 70%;
+    margin: .3rem 0;
+    padding: .2rem;
+    border-radius: 1rem;
+    color: teal;
+    text-align: center;
+}
+.convert {
+    font-size: 1.3rem;
+    width: 4.5rem;
+    margin: .3rem;
+    padding: .2rem;
+    background: #28D988;
+    border-color: aqua;
+    border-radius: 1rem;
+    color: white;
+}
+
+.output-box {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+    border: .2rem solid transparent;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 3rem #222;
+}
+.copy {
+    float: right;
+    padding: .2rem .5rem;
+    border: .1rem ridge #aaa;
+    text-align: center;
+    background: silver;
+    cursor: pointer;
+}
+.copy, .tip {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.expression {
+    width: 86%;
+    height: 15rem;
+    margin: 1rem auto;
+    padding: 2%;
+    border: .2rem inset silver;
+    text-align: left;
+    word-break: break-all;
+    white-space: normal;
+    color: white;
+    background: darkslategrey;
+    overflow: auto;
+}
+
+.result-box {
+    display: inline-block;
+    width: 90%;
+    border: .2rem outset silver;
+}
+.result-title {
+    float: left;
+    margin: .5rem;
+    padding: .2rem;
+    border-right: .2rem ridge #aaa;
+    color: #011;
+    background: #ddd;
+}
+.result-msg {
+    float: left;
+    width: calc(100% - 6rem);
+    margin: .5rem;
+    padding: .2rem;
+    border-bottom: .1rem solid #555;
+    color: #011;
+    background: silver;
+}
+
+@media screen and (max-width: 540px) {
+    html {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .input-box {
+        font-size: .5rem;
+    }
+    .input, .convert {
+        font-size: 1rem;
+    }
+}

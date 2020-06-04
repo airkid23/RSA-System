@@ -1,0 +1,163 @@
+html, body {
+    font-size: 16px;
+}
+
+
+
+
+
+h1,h2 {
+    text-align: center;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+textarea[data-hook=main] {
+    width: 85%;
+    font-size: 16px;
+    margin: 40px auto 10px;
+    padding: 4px 8px;
+    line-height: 1.5em;
+    display: block;
+    height: 350px;
+    background: #f0f4f5;
+}
+
+textarea[data-hook=custom-code]{
+    padding: 4px 6px;
+    font-size: 11px;
+    line-height: 1.25em;
+    font-family: monospace;
+}
+
+input[type="text"] {
+    padding: 1px 2px;
+}
+
+.buttons-container {
+    width: 85%;
+    display: flex;
+    margin: 0 auto 40px auto;
+    text-align: left;
+}
+.buttons-container-left {
+    flex-grow: 1
+}
+.buttons-container-left > div {
+    margin: 8px 0;
+}
+.buttons-container-left > div:first-child {
+    margin-top: 0;
+}
+.buttons-container-right {
+    text-align: right;
+}
+.hide, [data-template] {
+    display: none;
+}
+.message-date {
+    font-weight:bold;
+    float: left;
+}
+.message-copy,
+.message-delete {
+    float: right;
+}
+.message-delete a {
+    color: red !important;
+    padding-left:4px;
+}
+.message-content {
+    clear: both;
+    max-height: 250px;
+    overflow: auto;
+}
+.error-container {
+    color: red;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+.metrics {
+    color: #999;
+}
+.saved-messages {
+    clear: both;
+}
+.find-replace-container {
+    margin-top: 6px;
+}
+
+button.active {
+    background-color: blue !important;
+    color: white;
+}
+.contact {
+    margin: 0;
+    background: #efefef;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    font-size:0.8em;
+    text-align: right;
+    padding: 0px 10px;
+    line-height: 2.2em;
+}
+.custom-code-container {
+    vertical-align:top;
+}
+
+span.separator {
+}
+
+span.separator:before {
+    content: '|';
+    font-weight: 400;
+    margin: 0 3px;
+}
+
+button.dm {
+    float: right;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+@media all and (max-width: 1000px){
+    button.dm {
+        top: 10px;
+        right: 10px;
+    }
+
+    textarea, .buttons-container {
+        width: 95%;
+    }
+    .buttons-container {
+        flex-direction: column;
+    }
+    .buttons-container-right {
+        margin-top:10px;
+        text-align: center;
+        line-height: 2em;
+        padding-bottom: 20px;
+    }
+}
+button{
+    width: 200px;/*设置按钮宽度*/
+    height: 30px;/*设置按钮高度*/
+    color:white;/*字体颜色*/
+    background-color:cornflowerblue;/*按钮背景颜色*/
+    border-radius: 3px;/*让按钮变得圆滑一点*/
+    border-width: 0;/*消去按钮丑的边框*/
+    margin: 0;
+    outline: none;/*取消轮廓*/
+    font-family: KaiTi;/*字体设置为楷体*/
+    font-size: 17px;/*设置字体大小*/
+    text-align: center;/*字体居中*/
+    cursor: pointer;/*设置鼠标箭头手势*/
+}
+button:hover{/*鼠标移动时的颜色变化*/
+    background-color: antiquewhite;
+}
